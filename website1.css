@@ -1,0 +1,251 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-shadow: 0 0 15px #00f, 0 0 30px #0ff;
+}
+.holo-text {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ff8eff, #6cd3ff, #aaffa9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: holo-glow 4s infinite;
+}
+@keyframes holo-glow {
+    0%, 100% { text-shadow: 0 0 5px #ad79ec, 0 0 10px #00f, 0 0 20px #0ff; }
+    50% { text-shadow: 0 0 10px #ff8eff, 0 0 30px #6cd3ff; }
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    background-color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: lightpink;
+    text-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+}
+
+/* Sections */
+main {
+    padding: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+section {
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+section.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Images */
+.section-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+}
+.section-image.popped {
+    transform: scale(1);
+    z-index: 1000;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.section-image1 {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px #fff, 0 0 20px rgb(102, 4, 102);
+}
+.section-image1.popped {
+    transform: scale(1);
+    z-index: 1000;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.section-image:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+.section-image1:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #283e51;
+    color: #fff;
+    animation: slideUp 1s ease-out;
+    
+}
+
+button {
+    background-color: #4b79a1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #3a5d73;
+    transform: scale(1.1);
+}
+
+/* Keyframes for animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+body {
+    background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+    color: #fff;
+}
+#what-is {
+    background: url('images/laser-lights.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+#history {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(230, 230, 250, 0.8)), url('images/vintage.jpg') no-repeat center/cover;
+}
+#future {
+    background: url('images/future-city.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+#advantages {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+#disadvantages {
+    background: linear-gradient(to right, #3a3a3a, #0d0d0d);
+    color: #fff;
+}
+#gaming {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(230, 230, 250, 0.8)), url('images/vintage.jpg') no-repeat center/cover;
+}
+#cinema {
+    background: url('images/cinema-lights.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+#references {
+    background: #f7f7f7;
+    color: #333;
+}
+#feedback {
+    background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
+    color: #fff;
+}
+#simulation {
+    background: url('images/grid-pattern.jpg') no-repeat center center/cover;
+    animation: scrollBackground 1s linear infinite;
+}
+
+@keyframes scrollBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+#h21{
+    color: purple;
+}
+*{
+    font-family:'Times New Roman', Times, serif;
+}
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 6px;
+    background: linear-gradient(90deg, rgb(63, 14, 100), rgb(112, 26, 153), rgb(66, 17, 150), rgb(7, 33, 100), rgb(25, 64, 136), rgb(135, 30, 241), rgb(111, 90, 184));
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+  }

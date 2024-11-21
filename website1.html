@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holographic world</title>
+    <link rel="stylesheet" href="website1.css">
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const sections = document.querySelectorAll('section');
+    const feedbackForm = document.getElementById('feedback-form');
+
+    // Smooth scrolling for navigation links
+    const handleSmoothScroll = event => {
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    navLinks.forEach(link => link.addEventListener('click', handleSmoothScroll));
+
+    // Scroll-triggered animations for sections
+    const observerOptions = { threshold: 0.1 };
+
+    const handleIntersection = entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    };
+
+    const sectionObserver = new IntersectionObserver(handleIntersection, observerOptions);
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // Feedback form submission
+    const handleFeedbackSubmit = event => {
+        event.preventDefault();
+        const name = feedbackForm.querySelector('#name').value.trim();
+        const message = feedbackForm.querySelector('#message').value.trim();
+
+        if (name && message) {
+            alert(`Thank you for your feedback, ${name}!`);
+            feedbackForm.reset();
+        } else {
+            alert('Please fill out all fields before submitting.');
+        }
+    };
+
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', handleFeedbackSubmit);
+    }
+});
+    // Update progress bar width based on scroll position
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+  const progressBar = document.querySelector('.progress-bar');
+  progressBar.style.width = scrollPercentage + '%';
+});
+document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.section-image');
+
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    image.classList.toggle('popped');
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.section-image1');
+
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    image.classList.toggle('popped');
+                });
+            });
+        });
+    </script>
+    <div class="progress-bar"></div>
+    <header>
+        <h1 class="holo-text"><big><i><u>What if the world is (Holographic)</u>?</i></big></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#what-is">What is a Hologram?</a></li>
+            <li><a href="#history">History of Holography</a></li>
+            <li><a href="#future">Future of Holography</a></li>
+            <li><a href="#gaming">Impact on Gaming</a></li>
+            <li><a href="#cinema">Impact on Cinema</a></li>
+            <li><a href="#advantages">Advantages</a></li>
+            <li><a href="#disadvantages">Disadvantages</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="what-is">
+            <h2>What is a Hologram?</h2>
+            <p>
+            A hologram is a photographic representation that captures the light scattered from an object, creating a three-dimensional image.
+            It utilizes a technique called holography, which records the light's interference patterns to reproduce the original light field.
+            </p>
+            
+            <img src="https://storage.googleapis.com/a1aa/image/Oki4XAinIq5ZJNlHtfjePBEkWafagbAzW36O9Uo2fdPzD3FPB.jpg" alt="Illustration of a Hologram" class="section-image">
+        </section>
+        <section id="history">
+            <h2 id="h21">History of Holography</h2>
+            <p id="h21">Holography was discovered by Dennis Gabor in 1947. The first laser-based hologram was created in 1967.</p>
+            <img src="https://atomstalk.com/wp-content/uploads/2020/07/Dennis-Gabor-Father-Of-Holography.png" alt="History of Holography" class="section-image1">
+        </section>
+        <section id="future">
+            <h2>Future of Holography</h2>
+            <p>Holograms could revolutionize various industries, including education, healthcare, and entertainment.</p>
+            <img src="https://storage.googleapis.com/a1aa/image/uT51g5jlP9IiBRNq6baCwMpsK07RgyVBIZcqkIA5qfnamv4JA.jpg" alt="Future of Holography" class="section-image">
+        </section>
+        
+        <section id="gaming">
+            <h2 id="h21">Impact on Gaming Experience</h2>
+            <p id="h21">Holograms can create immersive environments that enhance gameplay, allowing for interactive storytelling and real-time player interactions.</p>
+            <img src="https://storage.googleapis.com/a1aa/image/Mcd0VSPKaBZ6BJkXetNFJv3VtH9PjOskLVrQIjNCAT3O6v4JA.jpg" alt="Impact on Gaming" class="section-image1">
+        </section>
+        <section id="cinema">
+            <h2>Impact on Cinema Experience</h2>
+            <p>Holographic technology can transform traditional movie-watching into a more engaging experience, with the possibility of 3D holographic projections that allow viewers to experience films in a new dimension.</p>
+            <img src="https://storage.googleapis.com/a1aa/image/RImVKL6e6oWhcq3Kppol4drS59IBe7iyFERloUx16UZ92finA.jpg" alt="Impact on Cinema" class="section-image">
+        </section>
+        <section id="advantages">
+            <h2>Advantages of Holograms</h2>
+            <ul>
+                <li>Enhanced visualization of complex data.</li>
+                <li>Immersive experiences in gaming and cinema.</li>
+                <li>Potential for remote collaboration.</li>
+            </ul>
+        </section>
+        <section id="disadvantages">
+            <h2>Disadvantages of Holograms</h2>
+            <ul>
+                <li>High costs of development.</li>
+                <li>Technical limitations.</li>
+                <li>Accessibility issues.</li>
+            </ul>
+        </section>
+        <section id="references">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://www.blackbox.ai" target="_blank">Blackbox AI</a></li>
+                <li><a href="https://chatgpt.com" target="_blank">Chat GPT</a></li>
+                <li><a href="https://www.wikipedia.org" target="_blank">WikiPedia</a></li>
+            </ul>
+        </section>
+    </main>
+    <section id="feedback">
+        <h2>Feedback</h2>
+        <form id="feedback-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter Name">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required placeholder="Leave a message please"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Holo Life. All rights reserved.</p>
+    </footer>
+</body>
+</html>
